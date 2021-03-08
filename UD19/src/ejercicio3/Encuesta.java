@@ -108,7 +108,7 @@ public class Encuesta extends JFrame {
 		        }
 				
 				informe+=" \n y el numero de horas dedicadas al ordenador son: "+hora.getValue();
-				JOptionPane.showMessageDialog(intro, informe);
+				JOptionPane.showMessageDialog(intro, informe); //ponemos una ventana de mensaje que muestre todo
 				}
 			
 		});

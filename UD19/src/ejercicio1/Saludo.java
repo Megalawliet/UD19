@@ -33,7 +33,7 @@ public class Saludo extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Saludo frame = new Saludo();
+					Saludo frame = new Saludo(); //Ponemos un nombre a la ventana, la parte del marco
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,8 +47,8 @@ public class Saludo extends JFrame {
 	 */
 	public Saludo() {
 		setTitle("SALUDO");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //se indica aquí que el jframe se cierra con sus propias funcionalidades
+		setBounds(100, 100, 450, 300); //se ponen las medidas deseadas de la ventana
 		contentPane = new JPanel();
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
@@ -59,7 +59,7 @@ public class Saludo extends JFrame {
 		JButton saludar = new JButton("Saludar");
 		saludar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(saludar, "Hola! "+texto1.getText());
+				JOptionPane.showMessageDialog(saludar, "Hola! "+texto1.getText()); //le indicamos la funcionalidad a la hora de ponerle pulsar el botón deseado (el que queremos que tenga toda la funcionalidad) 
 			}
 		});
 		

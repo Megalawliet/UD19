@@ -36,7 +36,7 @@ public class MiniCalculadora extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MiniCalculadora frame = new MiniCalculadora();
+					MiniCalculadora frame = new MiniCalculadora(); 
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,6 +48,7 @@ public class MiniCalculadora extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	//parametrización estandard de la creacion tipica de ventana jframe
 	public MiniCalculadora() {
 		setTitle("Calculadora");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,6 +57,7 @@ public class MiniCalculadora extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
+		//assignamos un nombre al textfield que recoge los numeros pero en formato entero int
 		n1 = new JTextField();
 		n1.setColumns(10);
 		
@@ -65,6 +67,7 @@ public class MiniCalculadora extends JFrame {
 		resultado = new JTextField();
 		resultado.setColumns(10);
 		
+		//aplicamos la misma metodologia que en división pero en formato entero int
 		JButton suma = new JButton("+");
 		suma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -75,11 +78,12 @@ public class MiniCalculadora extends JFrame {
 				totalsuma=num1+num2;
 				resultado.setText(String.valueOf(totalsuma));
 				operacion.setText("+");
-				//JOptionPane.showMessageDialog(suma, e, getTitle(), totalsuma, null);
+				
 				
 			}
 		});
 		
+		//aplicamos la misma metodologia que en división pero en formato entero int
 		JButton resta = new JButton("-");
 		resta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -93,6 +97,7 @@ public class MiniCalculadora extends JFrame {
 			}
 		});
 		
+		//aplicamos la misma metodologia que en división pero en formato entero int
 		JButton multiplica = new JButton("X");
 		multiplica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -107,16 +112,17 @@ public class MiniCalculadora extends JFrame {
 		});
 		multiplica.setToolTipText("");
 		
-		divide = new JButton("/");
+		divide = new JButton("/"); //le ponemos como queremos que se vea para el usuario el botón
 		divide.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double num1,num2;
-				double totaldivide;
-				num1=Integer.parseInt(n1.getText());
-				num2=Integer.parseInt(n2.getText());
+				//añadimos la funcionalidad de división
+				double num1,num2; //le ponemos formato double, aunque podriamos ponerle float, mejor quizas
+				double totaldivide; //numeros tipo double porque hay numeros decimales presentes al dividir un numero a mas pequeño que numero b
+				num1=Double.parseDouble(n1.getText()); //
+				num2=Double.parseDouble(n2.getText());
 				totaldivide=num1/num2;
-				resultado.setText(String.valueOf(totaldivide));
-				operacion.setText("/");
+				resultado.setText(String.valueOf(totaldivide));//imprimimos sobre la label resultado
+				operacion.setText("/"); //le decimpos que en el label de operacion (comun para todos los operandos) ponga una barra divisoria porque se esta realizando esa operacion
 			}
 		});
 		
@@ -133,7 +139,7 @@ public class MiniCalculadora extends JFrame {
 			
 			public void actionPerformed(ActionEvent e) {
 				String textual = "Hecho por Noelia Barrera.\n Aplicación Calculadora 1.0";
-				JOptionPane.showInputDialog(textual);
+				JOptionPane.showInputDialog(textual); //le he hecho pasarlo por un input text porque me daba conflictos con un message... Supervivencia...
 						
 				
 				
@@ -141,6 +147,7 @@ public class MiniCalculadora extends JFrame {
 						
 		});
 		
+		//ponemos el nombre de los jlabels leibles para el usuario
 		JLabel lblNewLabel = new JLabel("Numero 1");
 		
 		JLabel lblNewLabel_1 = new JLabel("Numero 2");

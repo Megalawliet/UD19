@@ -48,7 +48,7 @@ public class Seleccion extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
+		//definimos qué queremos ver dentro de la combobox, hay elementos por defectos, pero luego le pondremos nosotros mas contenido
 		JComboBox opciones = new JComboBox();
 		opciones.setModel(new DefaultComboBoxModel(new String[] {"Harry Potter", "Quantum od solace", "Avatar"}));
 		
@@ -63,8 +63,9 @@ public class Seleccion extends JFrame {
 		boton1.addActionListener(new ActionListener() {
 			@SuppressWarnings("unchecked")
 			public void actionPerformed(ActionEvent arg0) {
-				//JOptionPane.showMessageDialog(boton1, texto.getText()+opciones.setActionCommand.getName());
-				opciones.addItem(texto.getText());
+				
+				opciones.addItem(texto.getText()); //añadimos todo el contenido guardado en texto y la volcamos dentro del combobox
+				//el fallo es que admite repetición de elementos
 				
 			}
 		});
